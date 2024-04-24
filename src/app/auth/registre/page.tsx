@@ -21,7 +21,7 @@ const Authsubmit = () => {
 export default function Registre() {
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form className="space-y-6" action={handleRegistre} method="POST">
+      <form className="space-y-6" action={handleRegistre}>
         <div className="md:flex justify-between items-center space-y-6 md:space-y-0">
           <Input
             id="firstName"

@@ -21,7 +21,7 @@ const Authsubmit = () => {
 export default function Login() {
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form className="space-y-6" action={handleSignIn} method="POST">
+      <form className="space-y-6" action={handleSignIn}>
         <Input
           id="email"
           label="Email address"
