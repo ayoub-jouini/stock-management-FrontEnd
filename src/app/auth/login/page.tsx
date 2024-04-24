@@ -1,9 +1,22 @@
 "use client";
 
+import { handleSignIn } from "../actions";
+import { useFormStatus } from "react-dom";
+
 import Button from "@/components/global/button";
 import Input from "@/components/global/input";
-import { handleSignIn } from "../actions";
-import Link from "next/link";
+import Loading from "@/components/global/loading";
+
+const Authsubmit = () => {
+  const { pending } = useFormStatus();
+
+  return (
+    <>
+      <Button type="submit" name="Sign in" />
+      {pending ? <Loading /> : <></>}
+    </>
+  );
+};
 
 export default function Login() {
   return (
@@ -32,18 +45,9 @@ export default function Login() {
           </a>
         </div>
         <div>
-          <Button type="submit" name="Sign in" />
+          <Authsubmit />
         </div>
       </form>
-      <p className="mt-10 text-center text-sm text-gray-500">
-        you are not registered ?
-        <Link
-          href="/auth/registre"
-          className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-        >
-          Create an account
-        </Link>
-      </p>
     </div>
   );
 }

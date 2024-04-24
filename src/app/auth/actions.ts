@@ -1,5 +1,7 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+
 export const handleSignIn = async (formData: FormData) => {
   await new Promise((resolve) => setTimeout(resolve, 2500));
 
