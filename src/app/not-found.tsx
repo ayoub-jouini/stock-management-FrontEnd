@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import Button from "@/components/global/button";
 import { H1 } from "@/components/global/heading";
-import Link from "next/link";
 
 export default function NotFound() {
   return (
