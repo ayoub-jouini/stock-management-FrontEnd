@@ -1,22 +1,9 @@
 "use client";
 
 import { handleRegistre } from "../actions";
-import { useFormStatus } from "react-dom";
 
-import Button from "@/components/global/button";
+import Authsubmit from "@/components/auth/auth_submit";
 import Input from "@/components/global/input";
-import Loading from "@/components/global/loading";
-
-const Authsubmit = () => {
-  const { pending } = useFormStatus();
-
-  return (
-    <div className="mt-9">
-      <Button type="submit" name="Registre" />
-      {pending ? <Loading /> : <></>}
-    </div>
-  );
-};
 
 export default function Registre() {
   return (
@@ -60,7 +47,7 @@ export default function Registre() {
           required={true}
         />
         <div>
-          <Authsubmit />
+          <Authsubmit name="Registre" />
         </div>
       </form>
     </div>

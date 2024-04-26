@@ -10,3 +10,7 @@ export const handleSignIn = async (formData: FormData) => {
 };
 
 export const handleRegistre = async (formData: FormData) => {};
+
+export const handleForgotPassword = async (formData: FormData) => {};
+
+export const handleResetPassword = async (formData: FormData) => {};

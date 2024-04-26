@@ -1,22 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 import { handleSignIn } from "../actions";
-import { useFormStatus } from "react-dom";
 
-import Button from "@/components/global/button";
 import Input from "@/components/global/input";
-import Loading from "@/components/global/loading";
-
-const Authsubmit = () => {
-  const { pending } = useFormStatus();
-
-  return (
-    <>
-      <Button type="submit" name="Sign in" />
-      {pending ? <Loading /> : <></>}
-    </>
-  );
-};
+import Authsubmit from "@/components/auth/auth_submit";
 
 export default function Login() {
   return (
@@ -37,15 +26,15 @@ export default function Login() {
           required={true}
         />
         <div className="text-sm flex justify-end">
-          <a
-            href="#"
+          <Link
+            href="/auth/forgot_password"
             className="font-semibold text-indigo-600 hover:text-indigo-500"
           >
             Forgot password?
-          </a>
+          </Link>
         </div>
         <div>
-          <Authsubmit />
+          <Authsubmit name="Sign in" />
         </div>
       </form>
     </div>
